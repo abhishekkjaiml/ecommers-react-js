@@ -17,17 +17,17 @@ export const Navbar = () => {
         <ul className="flex flex-wrap items-center  text-[20px] gap-10 mr-5">
           <li   className="mr-20">
             <div    className="border   rounded-sm">
-              <input    className="border outline-none   rounded-tl-sm rounded-bl-sm w-125 h-10 text-[18px] p-5" placeholder="Enter Value" />
+              <input    className="border outline-none   rounded-tl-sm rounded-bl-sm w-125 h-10 text-[18px] p-5" placeholder="Search the product" />
               <span className="bg-blue-700 p-2 rounded-r-sm outline-none">
                 <SearchOutlinedIcon className="ml-7 mr-7 text-indigo-50"  />
               </span>
             </div>
           </li>
-          <li   onClick={() => navigate('/auth')} className="">
+          <li   onClick={() => navigate('/auth')} className="hover:cursor-pointer">
             <AccountCircleOutlinedIcon />
             Account
           </li>
-          <li   onClick={() => navigate('/cart')}   className="">
+          <li   onClick={() => navigate('/cart')}   className="hover:cursor-pointer">
             <ShoppingCartOutlinedIcon />
             Cart
           </li>
