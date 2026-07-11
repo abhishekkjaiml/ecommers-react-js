@@ -16,7 +16,7 @@ export const Navbar = () => {
           onClick={() => navigate("/")}
         >
           <h2>
-            SH<span className="text-blue-600">Bazaar</span>
+            Shop<span className="text-blue-600">Bazaar</span>
           </h2>
         </div>
         <nav className="ml-auto  gap-8 flex  mr-5">

@@ -3,10 +3,15 @@ import { Sidebar } from '../components/Sidebar'
 import { getAllProducts } from '../api/getAllProducts'
 import { useEffect, useState } from 'react'
 import { ShopPage } from '../components/ShopPage'
+import { useCart } from '../context/cart-context'
+
 
 export const Shop = () => {
 
   const [products, setProducts] = useState();
+
+  const { cart } = useCart()
+  console.log({cart})
 
   useEffect(() => {
     (async() => {
