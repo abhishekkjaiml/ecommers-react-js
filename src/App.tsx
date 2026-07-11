@@ -7,6 +7,7 @@ import { Contact } from './pages/Contact'
 import { Wishlist } from './pages/Wishlist'
 import { Cart } from './pages/Cart'
 import { Auth } from './pages/Auth'
+import { ProductsDetails } from './pages/ProductsDetails'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
       <Route path='/catogary' element={<Categries />} />
       <Route path='/deals' element={<Deals />} />
       <Route path='/contact' element={<Contact />} />
+      <Route path='/shop/product-details' element={<ProductsDetails />}/>
     </Routes>
   )
 }

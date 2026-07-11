@@ -22,13 +22,15 @@ export const ShopPage = ({product}) => {
   return (
     <div    className='w-58 h-100 border-2 border-zinc-300 rounded-md'>
         <div    className='p-4'>
-            <img    src={product.images} alt='product' className='w-50 h-50 flex rounded '/>
+            <div    onClick={() => navigate(`/shop/product-details`)}    className='hover:cursor-pointer'>
+                <img    src={product.images} alt='product' className='w-50 h-50 flex rounded '/>
             <h4 className='text-[15px] mt-2 font-semibold'>
                 {
                     product.title.length > 20 ? product.title.slice(0, 20) + "..." : product.title
                 }
             </h4>
             <h4 className='text-[15px]  mt-2 font-semibold'>Rs. {actualPrice}</h4>
+            </div>
             <div    className='flex flex-col gap-3 items-center mt-3'>
                 <button className=' h-10 w-50 border text-[15px] justify-center rounded-md cursor-pointer bg-blue-600 hover:bg-blue-800 text-indigo-50 border-indigo-50'>
                     <FavoriteBorderOutlinedIcon/>

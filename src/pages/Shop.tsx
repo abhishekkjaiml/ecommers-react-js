@@ -33,9 +33,9 @@ export const Shop = () => {
               </div>
             </div>
           </section>
-        <main>
-          <Sidebar />
-        </main>
+          <main className=''>
+            <Sidebar />
+          </main>
         
         </div>
     </div>

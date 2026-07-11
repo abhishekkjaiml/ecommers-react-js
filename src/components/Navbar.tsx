@@ -51,31 +51,31 @@ export const Navbar = () => {
       </header>
       <header className="flex flex-wrap h-12 bg-neutral-50 justify-center gap-5 font-bold">
         <h2
-          className="mt-3 hover:cursor-pointer hover:text-blue-600"
+          className="mt-3 hover:cursor-pointer hover:text-blue-600 hover:border-b-2"
           onClick={() => navigate("/")}
         >
           HOME
         </h2>
         <h2
-          className="mt-3 hover:cursor-pointer hover:text-blue-600"
+          className="mt-3 hover:cursor-pointer hover:text-blue-600 hover:border-b-2"
           onClick={() => navigate("/shop")}
         >
           SHOP
         </h2>
         <h2
-          className="mt-3 hover:cursor-pointer hover:text-blue-600"
+          className="mt-3 hover:cursor-pointer hover:text-blue-600 hover:border-b-2"
           onClick={() => navigate("/catogary")}
         >
           CATEGORIES
         </h2>
         <h2
-          className="mt-3 hover:cursor-pointer hover:text-blue-600"
+          className="mt-3 hover:cursor-pointer hover:text-blue-600 hover:border-b-2"
           onClick={() => navigate("/deals")}
         >
           DEALS
         </h2>
         <h2
-          className="mt-3 hover:cursor-pointer hover:text-blue-600"
+          className="mt-3 hover:cursor-pointer hover:text-blue-600 hover:border-b-2"
           onClick={() => navigate("/contact")}
         >
           CONTACT{" "}
