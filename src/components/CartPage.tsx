@@ -7,7 +7,7 @@ export const CartPage = ({ product }) => {
 
   const actualPrice = (product.price * 95.23).toFixed(2);
 
-  const onAddToCartBtnClick = (product) => {
+  const onRemoveToCartBtnClick = (product) => {
     cartDispatch({
         type: 'REMOVE_FROM_CART',
         payload: {
@@ -29,9 +29,9 @@ export const CartPage = ({ product }) => {
             <h4 className="font-bold">Rs. {actualPrice}</h4>
           </div>
           <div  className="mt-14 flex gap-4">
-            <button onClick={() => onAddToCartBtnClick(product)} className=" h-10 w-50 border text-[15px] justify-center rounded-md cursor-pointer bg-blue-600 hover:bg-blue-700 text-indigo-50 border-indigo-50">
+            <button onClick={() => onRemoveToCartBtnClick(product)} className=" h-10 w-50 border text-[15px] justify-center rounded-md cursor-pointer bg-blue-600 hover:bg-blue-700 text-indigo-50 border-indigo-50">
               <RemoveShoppingCartOutlinedIcon />
-              Remove To Cart
+              Remove From Cart
             </button>
             <button className=" h-10 w-50 border text-[15px] justify-center rounded-md cursor-pointer text-indigo-50    bg-zinc-800  hover:bg-zinc-700 border-indigo-50">
               <BoltOutlinedIcon />

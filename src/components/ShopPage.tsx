@@ -1,15 +1,19 @@
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCheckoutOutlined';
 import { useCart } from '../context/cart-context';
-import { findProductInCart } from '../utils/findProductInCart';
+import { useWishlist } from '../context/wishlist-context';
+import { findProductInCart, findProductInWishlist } from '../utils/findProductsInShop';
 import { useNavigate } from 'react-router-dom';
 
 export const ShopPage = ({product}) => {
 
     const navigate = useNavigate()
     const { cart, cartDispatch } = useCart();
+    const { wishlist, wishlistDispatch } = useWishlist()
     const isProductInCart = findProductInCart(cart, product.id)
+    const isWishlistInWishlist = findProductInWishlist(wishlist, product.id)
     const actualPrice = (product.price * 95.23).toFixed(2);
 
     const onAddToCartBtnClick = (product) => {
@@ -17,6 +21,13 @@ export const ShopPage = ({product}) => {
             type: 'ADD_TO_CART',
             payload: { product }
         }) : navigate('/myCart')
+    }
+
+    const onAddToWishlistBtnClick = (product) => {
+        !isWishlistInWishlist ? wishlistDispatch({
+            type: 'ADD_TO_WISHLIST',
+            payload: { product }
+        }) : navigate('/wishlist')
     }
 
   return (
@@ -32,9 +43,13 @@ export const ShopPage = ({product}) => {
             <h4 className='text-[15px]  mt-2 font-semibold'>Rs. {actualPrice}</h4>
             </div>
             <div    className='flex flex-col gap-3 items-center mt-3'>
-                <button className=' h-10 w-50 border text-[15px] justify-center rounded-md cursor-pointer bg-blue-600 hover:bg-blue-800 text-indigo-50 border-indigo-50'>
-                    <FavoriteBorderOutlinedIcon/>
-                    Add To Wishlist
+                <button onClick={() => onAddToWishlistBtnClick(product)} className=' h-10 w-50 border text-[15px] justify-center rounded-md cursor-pointer bg-blue-600 hover:bg-blue-800 text-indigo-50 border-indigo-50'>
+                    {
+                        !isWishlistInWishlist ? <FavoriteBorderOutlinedIcon/> : <FavoriteOutlinedIcon />
+                    }
+                    {
+                        !isWishlistInWishlist ? 'Add To Wishlist' : 'Go To Wishlist'
+                    }
                 </button>
                 <button 
                 onClick={() => onAddToCartBtnClick(product)}

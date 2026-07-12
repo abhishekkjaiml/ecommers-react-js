@@ -4,6 +4,7 @@ import { getAllProducts } from '../api/getAllProducts'
 import { useEffect, useState } from 'react'
 import { ShopPage } from '../components/ShopPage'
 import { useCart } from '../context/cart-context'
+import { useWishlist } from '../context/wishlist-context'
 
 
 export const Shop = () => {
@@ -11,7 +12,9 @@ export const Shop = () => {
   const [products, setProducts] = useState();
 
   const { cart } = useCart()
+  const { wishlist } = useWishlist();
   console.log({cart})
+  console.log({wishlist})
 
   useEffect(() => {
     (async() => {
