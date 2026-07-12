@@ -16,7 +16,7 @@ export const Navbar = () => {
           onClick={() => navigate("/")}
         >
           <h2>
-            Shop<span className="text-blue-600">Bazaar</span>
+            Shopi<span className="text-blue-600">Bazaar</span>
           </h2>
         </div>
         <nav className="ml-auto  gap-8 flex  mr-5">
@@ -25,7 +25,7 @@ export const Navbar = () => {
               className="outline-none w-120 p-2 border rounded-tl-md rounded-bl-md"
               placeholder="search product"
             />
-            <span className="w-5 bg-blue-600 hover:bg-sky-500 p-2.5 rounded-br rounded-tr text-white hover:cursor-pointer">
+            <span className="w-5 bg-blue-600 hover:bg-blue-700 p-2.5 rounded-br rounded-tr text-white hover:cursor-pointer">
               <SearchOutlinedIcon />
             </span>
           </div>

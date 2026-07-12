@@ -5,7 +5,7 @@ import { useCart } from "../context/cart-context";
 export const CartPage = ({ product }) => {
   const { cartDispatch } = useCart();
 
-  const actualPrice = (product.price * 95.23).toFixed(0);
+  const actualPrice = (product.price * 95.23).toFixed(2);
 
   const onAddToCartBtnClick = (product) => {
     cartDispatch({

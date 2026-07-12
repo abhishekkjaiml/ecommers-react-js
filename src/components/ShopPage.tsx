@@ -10,7 +10,7 @@ export const ShopPage = ({product}) => {
     const navigate = useNavigate()
     const { cart, cartDispatch } = useCart();
     const isProductInCart = findProductInCart(cart, product.id)
-    const actualPrice = (product.price * 95.23).toFixed(0);
+    const actualPrice = (product.price * 95.23).toFixed(2);
 
     const onAddToCartBtnClick = (product) => {
         !isProductInCart ? cartDispatch({

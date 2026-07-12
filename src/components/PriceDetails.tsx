@@ -1,11 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/cart-context";
 import { getTotalCartAmmount } from "../utils/getTotalCartAmmount";
 
 export const PriceDetails = () => {
+
+  const navigate = useNavigate()
   const { cart } = useCart();
   const totalCartAmmount = getTotalCartAmmount(cart);
-  const actualPrice = (totalCartAmmount * 95.23).toFixed(0);
+  const actualPrice = (totalCartAmmount * 95.23).toFixed(2);
   const deliveryCharge = 49;
+
 
   return (
     <div>
@@ -23,10 +27,10 @@ export const PriceDetails = () => {
         </div>
         <div className="flex border-b p-2">
           <p>Total Ammount</p>
-          <p className="ml-auto">Rs. {actualPrice + deliveryCharge}</p>
+          <p className="ml-auto">Rs. {Number(actualPrice) + Number(deliveryCharge)}</p>
         </div>
         <div>
-          <button className="mt-5 h-10 w-full border text-[15px] justify-center rounded-md cursor-pointer text-indigo-50    bg-zinc-800 border-indigo-50 hover:bg-zinc-700">
+          <button onClick={() => navigate("/place_Order")} className="mt-5 h-10 w-full border text-[15px] justify-center rounded-md cursor-pointer text-indigo-50    bg-zinc-800 border-indigo-50 hover:bg-zinc-700">
               PLACE ORDER
             </button>
         </div>
